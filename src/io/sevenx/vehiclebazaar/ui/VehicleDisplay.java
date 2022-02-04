@@ -1,55 +1,38 @@
-package io.sevenx.vehiclebazaar;
+package io.sevenx.vehiclebazaar.ui;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import io.sevenx.vehiclebazaar.data.Bike;
 import io.sevenx.vehiclebazaar.data.Car;
 import io.sevenx.vehiclebazaar.data.Vehicle;
 
 
-public class VehicleBazaarMain {
-	
+public class VehicleDisplay {
 
-		public static void main(String args[]) {
-			Vehicle bike=new Bike();
-			bike.setBrand("Tata Bazaz");
-			bike.setModel("Duke");
-			bike.setFuelType("Petrol");
-			bike.setMaximumSpeed(110);
-			bike.setColor("Orange");
-			
-			Vehicle car=new Car();
-			car.setBrand("Tata");
-			car.setModel("Harrier");
-			car.setFuelType("Diesel");
-			car.setMaximumSpeed(180);
-			car.setColor("Grey");
-			
-			List <Vehicle> vehicle=new ArrayList <Vehicle>();
-			vehicle.add(bike);
-			vehicle.add(car);
-			for(Vehicle v:vehicle) {
-				System.out.println("brand is: "+v.getBrand());
-				System.out.println("model is: "+v.getModel());
-				System.out.println("fuel type is: "+v.getFuelType());
-				System.out.println("maximum speed is: "+v.getMaximumSpeed()+"kmph");
-				System.out.println("color is: "+v.getColor());
-				if (v instanceof Bike) {
-					Bike bike1=(Bike)v;
-					bike1.setPower(8.36);
-					bike1.setNumberOfGears(5);
-					System.out.println("power is: "+bike1.getPower()+"PS");
-					System.out.println("number of gears are: "+bike1.getNumberOfGears()+"\n");
-				}
-				else if (v instanceof Car) {
-					Car car1=(Car)v;
-					car1.setBreakhorsePower(125);
-					car1.setTransmissionType("Automatic");
-					System.out.println("horse power is: "+car1.getBreakhorsePower()+"kW");
-					System.out.println("transmission type is: "+car1.getTransmissionType()+"\n");
-					
-				}
-			}
-			}
-		}
+    public static void displayVehicle(ArrayList <Vehicle> vehicles){
+        for(Vehicle vehicle: vehicles){
+            System.out.println("Model: " + vehicle.getModel());
+            System.out.println("FuelType: " + vehicle.getFuelType());
+            System.out.println("Mileage: " + vehicle.getMileage());
+            
+        
+        if(vehicle instanceof Bike){
+            Bike bike = (Bike) vehicle;
+            System.out.println("number of gears: " + bike.getNumberOfGears());
+            System.out.println("Power of bike is: " + bike.getPower());
+        }
+        if(vehicle instanceof Car){
+            Car car = (Car) vehicle;
+            System.out.println("Brand of car is: " + car.getBrand());
+            System.out.println("Color is: " + car.getColor());
+            
+
+        }
+
+        System.out.println("------------------------------------");
+        
+        }
+    }
+    
+}
+	

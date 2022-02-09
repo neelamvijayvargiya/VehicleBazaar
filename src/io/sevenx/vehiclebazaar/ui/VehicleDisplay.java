@@ -11,10 +11,11 @@ public class VehicleDisplay {
 
     public static void displayVehicle(ArrayList <Vehicle> vehicles){
         for(Vehicle vehicle: vehicles){
+	    System.out.println("Brand: "+ vehicle.getBrand());
             System.out.println("Model: " + vehicle.getModel());
             System.out.println("FuelType: " + vehicle.getFuelType());
             System.out.println("Mileage: " + vehicle.getMileage());
-            
+            System.out.println("Maximum Speed: "+ vehicle.getMaximumSpeed());
         
         if(vehicle instanceof Bike){
             Bike bike = (Bike) vehicle;
@@ -23,8 +24,8 @@ public class VehicleDisplay {
         }
         if(vehicle instanceof Car){
             Car car = (Car) vehicle;
-            System.out.println("Brand of car is: " + car.getBrand());
-            System.out.println("Color is: " + car.getColor());
+            System.out.println("BreakhorsePower is: " + car.getBreakhorsePower());
+            System.out.println("TransmissionType is: " + car.getTransmissionType());
             
 
         }
